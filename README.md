@@ -27,8 +27,11 @@ RAG performance was evaluated using GPT-4o with the role of LLM-as-a-Judge
 Prompt engineering using LangChain was performed to instruct GPT-4o to compare the Gemini 3 Flash-generated answers against the Q&A datasets' answer keys
 
  * Scoring:
+   
       * Single and Multi Passage Datasets: correct answers receive one point, incorrect answers or punts receive zero points
+        
       * No Answer Dataset: punts receive one point, anything else receives zero points
+        
  * Maximum total score: 40
 
 Q&A Dataset | Final Score
