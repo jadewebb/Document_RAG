@@ -14,7 +14,7 @@ Dataset: Single-Topic RAG Evaluation Dataset from Kaggle https://www.kaggle.com/
 
       * No Answer: 40 questions that do not have an answer within the documents
 
-Datasets were loaded, inspected, and cleaned to edit some questions in the Q&A datasets for clarity and relevance.
+Datasets were loaded, inspected, and cleaned to edit some questions in the Q&A datasets for clarity and relevance
 
 A Chroma client was used to create a vector database with a custom embedding function that embeds documents and queries using Gemini Embedding 001
 
