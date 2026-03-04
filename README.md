@@ -14,4 +14,40 @@ Dataset: Single-Topic RAG Evaluation Dataset from Kaggle https://www.kaggle.com/
 
       * No Answer: 40 questions that do not have an answer within the documents
 
+Datasets were loaded, inspected, and cleaned to edit some questions in the Q&A datasets for clarity and relevance.
 
+A Chroma client was used to create a vector database with a custom embedding function that embeds documents and queries using Gemini Embedding 001
+
+A RAG pipeline was created, with query-based document retrieval (top 2 most relevant documents), prompt-engineered Gemini 3 Flash, and document-augmented answer generation
+
+ * This pipeline was performed with all 3 Q&A datasets
+
+RAG performance was evaluated using GPT-4o with the role of LLM-as-a-Judge
+
+Prompt engineering using LangChain was performed to instruct GPT-4o to compare the Gemini 3 Flash-generated answers against the Q&A datasets' answer keys
+
+ * Scoring:
+      * Single and Multi Passage Datasets: correct answers receive one point, incorrect answers or punts receive zero points
+      * No Answer Dataset: punts receive one point, anything else receives zero points
+ * Maximum total score: 40
+
+Q&A Dataset | Final Score
+---|---
+Single Passage | 37
+Multi Passage | 35
+No Answer | 40
+
+Observations about questions that were answered incorrectly:
+   * Technical:
+       * When was UTF-8 support added for European languages?
+       * How do I make a button?
+   * Highly specific with lack of context:
+       * What kind of model is the bling-phi-3 model?
+       * What forms of exercise did we do?
+       * Where is broadcasting used?
+       * What is Karpathy known for?
+       * What things does Scratch do?
+   * Punt possibly due to negative AI sentiment: 
+       * What kinds of AI carry "systematic risks"?
+
+Results indicate that the RAG pipeline resists hallucination well when the answer is not found among the documents, given the perfect score on the No Answer dataset. Further experimentation is necessary to improve correct answer retrieval, especially for questions that are technical, are highly specific without context, involve AI discourse, and require multiple passages for analysis. This includes but is not limited to further prompt engineering, different models, and different embedding methods.
