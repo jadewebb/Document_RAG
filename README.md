@@ -38,16 +38,27 @@ Multi Passage | 35
 No Answer | 40
 
 Observations about questions that were answered incorrectly:
+
    * Technical:
+     
        * When was UTF-8 support added for European languages?
+         
        * How do I make a button?
+         
    * Highly specific with lack of context:
+     
        * What kind of model is the bling-phi-3 model?
+         
        * What forms of exercise did we do?
+         
        * Where is broadcasting used?
+         
        * What is Karpathy known for?
+         
        * What things does Scratch do?
-   * Punt possibly due to negative AI sentiment: 
+         
+   * Punt possibly due to negative AI sentiment:
+     
        * What kinds of AI carry "systematic risks"?
 
 Results indicate that the RAG pipeline resists hallucination well when the answer is not found among the documents, given the perfect score on the No Answer dataset. Further experimentation is necessary to improve correct answer retrieval, especially for questions that are technical, are highly specific without context, involve AI discourse, and require multiple passages for analysis. This includes but is not limited to further prompt engineering, different models, and different embedding methods.
