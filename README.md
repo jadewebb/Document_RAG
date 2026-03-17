@@ -2,7 +2,8 @@
 
 Perform RAG with Gemini 3 Flash and evaluate using single topic Q&A
 
-Dataset: Single-Topic RAG Evaluation Dataset from Kaggle https://www.kaggle.com/datasets/samuelmatsuoharris/single-topic-rag-evaluation-dataset
+## Dataset
+Single-Topic RAG Evaluation Dataset from Kaggle https://www.kaggle.com/datasets/samuelmatsuoharris/single-topic-rag-evaluation-dataset
 
   * Documents Dataset: 20 niche text documents (articles, blogs, documentation) produced within the last few years (as of July 2024), ranging from a few thousand to a few ten thousand words
 
@@ -16,15 +17,19 @@ Dataset: Single-Topic RAG Evaluation Dataset from Kaggle https://www.kaggle.com/
 
 Datasets were loaded, inspected, and cleaned to edit some questions in the Q&A datasets for clarity and relevance
 
-A Chroma client was used to create a vector database with a custom embedding function that embeds documents and queries using Gemini Embedding 001
+## Gemini RAG Pipeline
 
-A RAG pipeline was created, with query-based document retrieval (top 2 most relevant documents), prompt-engineered Gemini 3 Flash, and document-augmented answer generation
+A **Chroma client** was used to create a **vector database** with a **custom embedding function** that embeds documents and queries using **Gemini Embedding 001**
+
+A RAG pipeline was created, with **query-based document retrieval** (top 2 most relevant documents), **prompt-engineered Gemini 3 Flash**, and **document-augmented answer generation**
 
  * This pipeline was performed with all 3 Q&A datasets
 
-RAG performance was evaluated using GPT-4o with the role of LLM-as-a-Judge
+## LLM-as-a-Judge Evaluation
 
-Prompt engineering using LangChain was performed to instruct GPT-4o to compare the Gemini 3 Flash-generated answers against the Q&A datasets' answer keys
+RAG performance was evaluated using **GPT-4o** with the role of LLM-as-a-Judge
+
+Prompt engineering using **LangChain** was performed to instruct GPT-4o to compare the Gemini 3 Flash-generated answers against the Q&A datasets' answer keys
 
  * Scoring:
    
@@ -39,6 +44,8 @@ Q&A Dataset | Final Score
 Single Passage | 37
 Multi Passage | 35
 No Answer | 40
+
+## Observations and Results
 
 Observations about questions that were answered incorrectly:
 
