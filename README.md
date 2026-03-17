@@ -71,4 +71,4 @@ Observations about questions that were answered incorrectly:
      
        * What kinds of AI carry "systematic risks"?
 
-Results indicate that the RAG pipeline resists hallucination well when the answer is not found among the documents, given the perfect score on the No Answer dataset. Further experimentation is necessary to improve correct answer retrieval, especially for questions that are technical, are highly specific without context, involve AI discourse, and require multiple passages for analysis. This includes but is not limited to further prompt engineering, different models, and different embedding methods.
+Results indicate that the RAG pipeline **resists hallucination well** when the answer is not found among the documents, given the perfect score on the No Answer dataset. Further experimentation is necessary to **improve correct answer retrieval**, especially for questions that are technical, are highly specific without context, involve AI discourse, and require multiple passages for analysis. This includes but is not limited to further prompt engineering, different models, and different embedding methods.
