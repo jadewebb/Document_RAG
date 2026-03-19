@@ -1,6 +1,6 @@
 # Document Q&A with RAG
 
-Perform RAG with Gemini 3 Flash and evaluate using single topic Q&A
+Perform document RAG with Gemini 3 Flash and evaluate using single topic Q&A
 
 ## Dataset
 Single-Topic RAG Evaluation Dataset from Kaggle https://www.kaggle.com/datasets/samuelmatsuoharris/single-topic-rag-evaluation-dataset
